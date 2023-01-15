@@ -54,3 +54,39 @@
 
 // Angular Differences
 @import "angular-differences/angular-differences";
+
+
+@font-face {
+  font-family: gilroy;
+  src: url(../fonts/Gilroy-SemiBold.woff2) format("opentype");
+}
+
+@font-face {
+  font-family: gilroy-bold;
+  src: url(../fonts/Gilroy-Bold.woff2) format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy-Regular;
+  src: url(../fonts/Gilroy-Regular.woff2) format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy-SemiBold;
+  src: url(../fonts/Gilroy-SemiBold.woff2) format("opentype");
+}
+
+@font-face {
+  font-family: gilroy-medium;
+  src: url(../fonts/Gilroy-Medium.woff2) format("opentype");
+}
+
+@font-face {
+  font-family: gilroy-bold-italic;
+  src: url(../fonts/Gilroy-BoldItalic.woff) format("opentype");
+}
+
+@font-face {
+  font-family: gilroy-extra-bold;
+  src: url(../fonts/Gilroy-ExtraBold.woff) format("opentype");
+}

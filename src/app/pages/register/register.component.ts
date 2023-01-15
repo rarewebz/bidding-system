@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  hasError(e){
+
+  }
+
+  getNumber(e){
+
+  }
+
+  telInputObject(e){
+
+  }
+
+  onCountryChange(e){
+
+
   }
 
 }
