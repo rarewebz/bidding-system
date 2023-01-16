@@ -1,45 +1,154 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  font-family: "gilroy", "arial", sans-serif!important;
+  font-family: "gilroy", "arial", sans-serif !important;
 }
 
-.main-welcome{
+.main-welcome {
   font-size: 40px;
-  font-family: gilroy-bold!important;
+  font-family: gilroy-bold !important;
 }
 
-.card-header{
-  border-top: 1px solid rgba(0, 0, 0, 0.05)!important;
+.card-header {
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
-.login-title{
+.login-title {
   font-size: 15px;
-  font-family: gilroy-bold!important;
-}
-.p1-top{
-  padding-top: 1rem!important;
+  font-family: gilroy-bold !important;
 }
 
-.p1-bottom{
-  padding-bottom: 1rem!important;
+.p1-top {
+  padding-top: 1rem !important;
 }
 
-.logo-outer-div{
+.p1-bottom {
+  padding-bottom: 1rem !important;
+}
+
+.logo-outer-div {
   text-align: center;
 
-  img{
+  img {
     height: 90px;
     border-radius: 6px;
     margin-bottom: 20px;
   }
 }
 
-.iti{
-  width: 100%!important;
+.iti {
+  width: 100% !important;
 }
 
-.p2-5{
-  padding: 2.5rem!important;
+.p2-5 {
+  padding: 2.5rem !important;
 }
 
+.create-auc {
+  width: 100%;
+  text-align: end;
+
+  button {
+    margin: 0 !important;
+  }
+}
+
+.bid-card {
+  position: relative;
+  height: 10vw !important;
+  min-height: 9.5rem;
+  border-radius: 0.45rem !important;
+}
+
+.bid-img {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url('assets/img/mac.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+  outline: -webkit-focus-ring-color auto 0 !important;
+
+  :focus {
+    outline: -webkit-focus-ring-color auto 0 !important;
+  }
+
+  :hover {
+    border: none !important;
+    outline: -webkit-focus-ring-color auto 0 !important;
+  }
+}
+
+.text-align-left {
+  text-align: left !important;
+}
+
+.white-text-dashboard {
+  color: #FFFFFF !important;
+  font-size: 15px !important;
+  position: absolute;
+  bottom: 10px;
+
+  padding-left: 1rem;
+  padding-bottom: 0.2rem
+}
+
+.bid-text-color {
+  color: #2C2C2C !important;
+
+}
+
+.bid-text {
+  color: #4B6883 !important;
+  font-size: 10px;
+}
+
+.session-per-text {
+  font-size: 13px;
+  color: #7C7C7C !important;
+  font-family: gilroy-bold !important;
+}
+
+.free-div {
+  padding-left: 12px;
+  padding-right: 12px;
+  height: 2rem;
+  background: #172B4D;
+  position: absolute !important;
+  top: -1px !important;
+  margin: auto;
+  /* left: 0; */
+  right: 0;
+  border-bottom-left-radius: 0.45rem;
+  border-top-right-radius: 0.45rem;
+  margin-bottom: 0 !important;
+
+  div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 14px;
+    height: 100%;
+    margin-bottom: 0;
+    align-items: center;
+  }
+}
+
+.price-txt{
+  color: #32325d!important;
+  font-size: 17px!important;
+}
+
+.dash-title{
+  color: #32325d!important;
+  font-size: 20px;
+  margin-bottom: 1rem;
+  font-family: gilroy-extra-bold !important;
+}
+.mb-1rem{
+  margin-bottom: 1rem!important;
+}
+
+.red-color-bac{
+  background: #FF2222!important;
+}
