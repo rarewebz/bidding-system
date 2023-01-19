@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import {Ng2TelInputModule} from 'ng2-tel-input';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {Ng2TelInputModule} from 'ng2-tel-input';
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    Ng2TelInputModule
+    Ng2TelInputModule,
+    PerfectScrollbarModule
   ],
   declarations: [
     AppComponent,

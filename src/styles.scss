@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+
 
 body {
   font-family: "gilroy", "arial", sans-serif !important;
@@ -152,3 +152,154 @@ body {
 .red-color-bac{
   background: #FF2222!important;
 }
+
+.img-div {
+  width: 100%;
+  border-radius: 11px;
+}
+
+.auction-image {
+  width: 98%;
+  height: 17rem;
+  border-radius: 11px;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.08);
+}
+
+.back-button {
+  color: #5F5F5F!important;
+  border: none !important;
+  padding: 0!important;
+
+  margin-left: 3rem!important;
+  margin-top: 1rem!important;
+  background: none!important;
+  box-shadow: none!important;
+
+  .btn-wrapper--icon {
+    margin-right: 10px;
+  }
+
+  :hover {
+    color: #000000;
+  }
+
+  :focus {
+    border: none !important;
+    outline: none !important;
+  }
+
+  .btn-inner--text{
+    margin-left: 0.25rem!important;
+  }
+}
+
+.galary-div {
+  position: relative;;
+  /* height: 105%; */
+  height: 20vh;
+  //width: 97%;
+}
+
+.galary-card {
+  padding: 1px;
+  padding-right: 2%
+}
+
+.galary-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  //box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15)
+}
+
+.flex-row {
+  display: flex !important;
+  margin-bottom: 0.6rem;
+}
+
+.div-border-right {
+  border-right: solid 1px #0000001c;
+}
+
+.auc-name {
+  font-family: gilroy-bold;
+  font-size: 20px;
+  margin-top: 1rem;
+  margin-left: 10px;
+  display: inline;
+  color: #32325d!important;
+}
+
+.profile-bio-text {
+  font-family: gilroy-bold;
+  font-size: 16px;
+  color: #3F3F3F;
+}
+
+.font-bold {
+  font-family: gilroy-bold !important;
+}
+
+.facility {
+  padding-left: 14px;
+  margin-top: 1rem;
+}
+
+.gym-desc {
+  font-family: gilroy-medium;
+  font-size: 15px;
+  color: #626262;
+}
+
+.auc-time-left{
+  margin-left: 14px;
+  font-size: 26px;
+  color: #e3011b;
+  font-family: gilroy-bold-italic !important;
+}
+
+.bid-price{
+  margin-left: 14px;
+  font-size: 35px;
+  color: #2c2c2c!important;
+  font-family: gilroy-extra-bold !important;
+}
+
+.chat-item{
+  background: #172b4d;
+  max-width: fit-content;
+  border-bottom-right-radius: 0.45rem;
+  border-top-right-radius: 0.45rem;
+  border-bottom-left-radius: 0.45rem;
+  margin-bottom: 1rem;
+
+  .chat-box{
+    padding: 9px;
+  }
+}
+
+.display-flex{
+  display: flex!important;
+}
+
+.chat-outer-div{
+  border-radius: 0.45rem;
+  box-shadow: 0 0.46875rem 2.1875rem rgb(59 62 102 / 3%), 0 0.9375rem 1.40625rem rgb(59 62 102 / 3%), 0 0.25rem 0.53125rem rgb(59 62 102 / 5%), 0 0.125rem 0.1875rem rgb(59 62 102 / 3%);
+  margin-top: 1rem;
+  margin-left: 15px;
+}
+
+.chat-button-outer-div{
+  border-bottom-left-radius: 0.45rem;
+  border-bottom-right-radius: 0.45rem;
+}
+
+.chat-text{
+  font-size: 14px;
+  font-family: Gilroy-SemiBold!important;
+  margin: 0!important;
+}
+
