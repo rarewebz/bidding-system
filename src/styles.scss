@@ -1,4 +1,4 @@
-
+@import "node_modules/angular-notifier/styles";
 
 body {
   font-family: "gilroy", "arial", sans-serif !important;
@@ -61,6 +61,7 @@ body {
 }
 
 .bid-img {
+  cursor: pointer;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url('assets/img/mac.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -301,5 +302,22 @@ body {
   font-size: 14px;
   font-family: Gilroy-SemiBold!important;
   margin: 0!important;
+}
+
+.expired-div{
+  margin-left: 14px;
+  background: #e3011b;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 0.45rem;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+
+.avatar img {
+  border: solid 2px white;
 }
 

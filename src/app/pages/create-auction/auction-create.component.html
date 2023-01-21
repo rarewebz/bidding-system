@@ -1,0 +1,66 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8 p2-5" style="padding: 2.5rem!important;">
+
+</div>
+
+<div class="row mb-4" @fadeIn>
+  <div class="col-xl-6 col-md-12 col-sm-12">
+
+    <button class="btn btn-icon btn-3 btn-default back-button" (click)="goBack()" type="button">
+      <span class="btn-inner--icon"><i class="ni ni-bold-left"></i></span>
+      <span class="btn-inner--text">Back to search result</span>
+    </button>
+
+  </div>
+</div>
+
+
+<!-- Page content -->
+
+<form style="padding: 3rem">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input type="email" class="form-control form-control-alternative" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <input type="text" placeholder="Regular" class="form-control form-control-alternative" disabled="">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="input-group input-group-alternative mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="ni ni-zoom-split-in"></i></span>
+          </div>
+          <input class="form-control form-control-alternative" placeholder="Search" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="input-group input-group-alternative mb-4">
+          <input class="form-control" placeholder="Birthday" type="text">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="ni ni-zoom-split-in"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group has-success">
+        <input type="text" placeholder="Success" class="form-control form-control-alternative is-valid">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group has-danger">
+        <input type="email" placeholder="Error Input" class="form-control form-control-alternative is-invalid">
+      </div>
+    </div>
+  </div>
+</form>

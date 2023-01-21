@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://bidding-system-service.onrender.com",
+    "secure": false
+  }
+}

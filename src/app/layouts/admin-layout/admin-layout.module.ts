@@ -13,6 +13,7 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+import {AuctionCreateComponent} from '../../pages/create-auction/auction-create.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -30,7 +31,8 @@ import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
     UserProfileComponent,
     TablesComponent,
     IconsComponent,
-    AuctionComponent
+    AuctionComponent,
+    AuctionCreateComponent
   ]
 })
 

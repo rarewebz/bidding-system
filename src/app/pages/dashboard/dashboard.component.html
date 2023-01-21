@@ -5,259 +5,87 @@
 <div class="container-fluid " style="margin-top: 2rem!important;">
   <div class="header-body">
 
-    <div class="dash-title">Upcoming</div>
+    <div class="dash-title" *ngIf="upcoming.length > 0">Upcoming</div>
     <!-- Card stats -->
     <div class="row mb-1rem">
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
+
+
+      <div class="col-xl-3 col-lg-6" *ngFor="let upcomingAuction of upcoming">
+        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img" [ngStyle]="getAuctionImage(upcomingAuction.images)">
 
           <div class="free-div">
-            <div>{{getRemTime('2023-01-17T15:39:09Z')}}</div>
+            <div>{{getRemTime(upcomingAuction['enddate'])}}</div>
           </div>
 
           <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
+            {{upcomingAuction['name']}}
           </div>
 
         </div>
 
         <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
+          <span
+            class=" session-per-text price-txt">Price {{upcomingAuction['initialprice']['numberDecimal'] | currency : 'LKR ' : 'code'}} </span>
+          <br>
           <span class=" session-per-text">By Chanuka Sandaruwan</span>
 
         </div>
       </div>
-
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
-
-          <div class="free-div">
-            <div>{{getRemTime('2023-01-17T15:39:09Z')}}</div>
-          </div>
-
-          <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
-          </div>
-
-        </div>
-
-        <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
-
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
-
-          <div class="free-div">
-            <div>{{getRemTime('2023-01-17T15:39:09Z')}}</div>
-          </div>
-
-          <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
-          </div>
-
-        </div>
-
-        <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
-
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
-
-          <div class="free-div">
-            <div>{{getRemTime('2023-01-17T15:39:09Z')}}</div>
-          </div>
-
-          <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
-          </div>
-
-        </div>
-
-        <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
-
-        </div>
-      </div>
-
 
     </div>
 
 
-    <div class="dash-title">Ongoing</div>
+    <div class="dash-title" *ngIf="ongoing.length > 0">Ongoing</div>
     <!-- Card stats -->
     <div class="row mb-1rem">
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
+
+      <div class="col-xl-3 col-lg-6" *ngFor="let ongoingAuction of ongoing">
+        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img" [ngStyle]="getAuctionImage(ongoingAuction.images)">
 
           <div class="free-div">
-            <div>{{getRemTime('2023-01-17T15:39:09Z')}}</div>
+            <div>{{getRemTime(ongoingAuction['enddate'])}}</div>
           </div>
 
           <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
+            {{ongoingAuction['name']}}
           </div>
 
         </div>
 
         <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
+          <span
+            class=" session-per-text price-txt">Price {{ongoingAuction['initialprice']['numberDecimal'] | currency : 'LKR ' : 'code'}} </span>
+          <br>
           <span class=" session-per-text">By Chanuka Sandaruwan</span>
 
         </div>
       </div>
-
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
-
-          <div class="free-div">
-            <div>{{getRemTime('2023-01-17T15:39:09Z')}}</div>
-          </div>
-
-          <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
-          </div>
-
-        </div>
-
-        <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
-
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
-
-          <div class="free-div">
-            <div>{{getRemTime('2023-01-17T15:39:09Z')}}</div>
-          </div>
-
-          <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
-          </div>
-
-        </div>
-
-        <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
-
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
-
-          <div class="free-div">
-            <div>{{getRemTime('2023-01-17T15:39:09Z')}}</div>
-          </div>
-
-          <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
-          </div>
-
-        </div>
-
-        <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
-
-        </div>
-      </div>
-
 
     </div>
 
 
-    <div class="dash-title mb-1rem">End</div>
+    <div class="dash-title mb-1rem" *ngIf="end.length > 0">End</div>
     <!-- Card stats -->
     <div class="row">
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
+
+      <div class="col-xl-3 col-lg-6" *ngFor="let endAuction of end">
+        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img" [ngStyle]="getAuctionImage(endAuction.images)" (click)="navigateToAuction(endAuction,'end')">
 
           <div class="free-div red-color-bac">
             <div>Expired</div>
           </div>
 
           <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
+            {{endAuction['name']}}
           </div>
 
         </div>
 
         <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
-
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
-
-          <div class="free-div red-color-bac">
-            <div>Expired</div>
-          </div>
-
-          <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
-          </div>
-
-        </div>
-
-        <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
-
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
-
-          <div class="free-div red-color-bac">
-            <div>Expired</div>
-          </div>
-
-          <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
-          </div>
-
-        </div>
-
-        <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
-
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-lg-6">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img">
-
-          <div class="free-div red-color-bac">
-            <div>Expired</div>
-          </div>
-
-          <div class="pt-3 text-align-left white-text-dashboard">
-            Mac book pro 2017
-          </div>
-
-        </div>
-
-        <div class="pt-1 text-align-left bid-text-color bid-text">
-          <span class=" session-per-text price-txt">Price {{10000 | currency : 'LKR ' : 'code'}} </span> <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
+          <span
+            class=" session-per-text price-txt">Price {{endAuction['initialprice']['$numberDecimal'] | currency : 'LKR ' : 'code'}} </span>
+          <br>
+<!--          <span class=" session-per-text">By Chanuka Sandaruwan</span>-->
 
         </div>
       </div>

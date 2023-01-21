@@ -9,13 +9,14 @@ import { LoginComponent } from '../../pages/login/login.component';
 import { RegisterComponent } from '../../pages/register/register.component';
 import {Ng2TelInputModule} from 'ng2-tel-input';
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(AuthLayoutRoutes),
-    FormsModule,
-    Ng2TelInputModule,
-    // NgbModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(AuthLayoutRoutes),
+        FormsModule,
+        Ng2TelInputModule,
+        ReactiveFormsModule,
+        // NgbModule
+    ],
   declarations: [
     LoginComponent,
     RegisterComponent

@@ -21,18 +21,18 @@
 
       <div style="margin-bottom: 2rem;" class="col-12 ">
         <div class="img-div">
-          <div class="auction-image" [ngStyle]="setImage('https://cdn.mos.cms.futurecdn.net/uWjEogFLUTBc8mSvagdiuP.jpg')"></div>
+          <div class="auction-image" [ngStyle]="setImage(auction['images'][0])"></div>
         </div>
       </div>
 
       <div class="col-12" style="padding-left: 0!important;">
         <div class="flex-row galary-div" >
           <div class="col-6 galary-card" >
-            <div class="galary-img" [ngStyle]="setImage('https://cdn.mos.cms.futurecdn.net/uWjEogFLUTBc8mSvagdiuP.jpg')"></div>
+            <div class="galary-img" [ngStyle]="setImage(auction['images'][1])"></div>
           </div>
 
           <div class="col-6 galary-card" >
-            <div class="galary-img" [ngStyle]="setImage('https://cdn.mos.cms.futurecdn.net/uWjEogFLUTBc8mSvagdiuP.jpg')"></div>
+            <div class="galary-img" [ngStyle]="setImage(auction['images'][2])"></div>
           </div>
 
         </div>
@@ -42,30 +42,42 @@
 
     <div class="col-md-5">
 
-      <div class="display-4 mb-3 auc-name">MacBook 2017 For Sale </div>
+      <div class="display-4 mb-3 auc-name">{{auction['name']}}</div>
 
       <div class="profile-bio-text mb-2 font-bold  text-left facility">
         Description
       </div>
 
       <div class="col-12">
-        <p class="gym-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem cum dicta dolor et eveniet hic laudantium, modi nostrum, numquam possimus quasi soluta tempore. Accusamus blanditiis cupiditate excepturi sed! Illo?</p>
+        <p class="gym-desc">{{auction['description']}}</p>
+      </div>
+
+      <div class="profile-bio-text mb-2 font-bold  text-left facility">
+        Owner
+      </div>
+
+      <div class="col-12">
+        <p class="gym-desc">Chanuka Sandaruwan</p>
       </div>
 
       <div>
 
-        <div class="profile-bio-text mb-2 font-bold  text-left facility">
+        <div class="profile-bio-text mb-2 font-bold  text-left facility" *ngIf="type != 'end'">
           Time Left
         </div>
 
-        <div class="auc-time-left">{{remTime}}  |  {{'2023-01-18T15:39:09Z' | date : 'EEEE, MMMM d, y'}}</div>
+        <div *ngIf="type != 'end'" class="auc-time-left">{{remTime}}  |  {{'2023-01-18T15:39:09Z' | date : 'EEEE, MMMM d, y'}}</div>
+
+        <div class="expired-div font-bold" *ngIf="type == 'end'">
+          Expired
+        </div>
       </div>
 
       <div class="profile-bio-text mb-2 font-bold  text-left facility">
         Current bid
       </div>
 
-      <div class="bid-price">{{100000 | currency : 'LKR ' : 'code'}}</div>
+      <div class="bid-price">{{auction['initialprice']['$numberDecimal'] | currency : 'LKR ' : 'code'}}</div>
 
 
 
