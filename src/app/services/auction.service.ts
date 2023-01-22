@@ -9,8 +9,24 @@ export class AuctionService {
   constructor(private http: HttpClient) {
   }
 
-  getAuctionsForDashboard():Observable<any>{
+  getAuctionsForDashboard(): Observable<any> {
     return this.http.get(constants.main_url + constants.auction_path);
+  }
+
+  saveAuction(req): Observable<any> {
+    return this.http.post(constants.main_url + constants.auction_path, req);
+  }
+
+  saveAuctionImage(auctionId, req): Observable<any> {
+    return this.http.post(constants.main_url + constants.auction_image_path + '/' + auctionId, req);
+  }
+
+  getMyAuctions(): Observable<any> {
+    return this.http.get(constants.main_url + constants.my_auction_path);
+  }
+
+  getAuctionOwner(userId) : Observable<any>{
+    return this.http.get(constants.main_url + constants.auction_path + "/" + userId + "/owner");
   }
 
 }

@@ -10,7 +10,7 @@
 
     <!-- Form -->
     <div class="create-auc">
-      <button class="btn btn-icon btn-3 btn-default" type="button">
+      <button class="btn btn-icon btn-3 btn-default" type="button" [routerLink]="['/auction-create']">
         <span class="btn-inner--icon"><i class="ni ni-bag-17"></i></span>
         <span class="btn-inner--text">Create an auction</span>
       </button>
@@ -36,9 +36,9 @@
             <i class="ni ni-single-02"></i>
             <span>My profile</span>
           </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
-            <i class="ni ni-settings-gear-65"></i>
-            <span>Settings</span>
+          <a routerLinkActive="active" [routerLink]="['/my-auction']" class="dropdown-item">
+            <i class="ni ni-favourite-28"></i>
+            <span>My Auctions</span>
           </a>
           <div class="dropdown-divider"></div>
           <a (click)="logOut()"  class="dropdown-item">

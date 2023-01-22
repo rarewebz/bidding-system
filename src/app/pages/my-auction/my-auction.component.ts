@@ -1,67 +1,60 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as moment from 'moment';
-import {PerfectScrollbarComponent} from 'ngx-perfect-scrollbar';
-import {ActivatedRoute} from '@angular/router';
-import {map, timeInterval} from 'rxjs';
-import {constants} from '../../constants/constant';
-import {Location} from '@angular/common';
 import {AuctionService} from '../../services/auction.service';
 import {NotifierService} from 'angular-notifier';
-
-declare const google: any;
+import {constants} from '../../constants/constant';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-auction',
-  templateUrl: './auction.component.html',
-  styleUrls: ['./auction.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './my-auction.component.html',
+  styleUrls: ['./my-auction.component.scss']
 })
-export class AuctionComponent implements OnInit, OnDestroy {
+export class MyAuctionComponent implements OnInit {
 
-  days;
-  hours;
-  minutes;
-  seconds;
+  public days: any;
+  public hours: any;
+  public minutes: any;
+  public seconds: any;
 
-  remTime: string;
+  public myActions: Array<any> = [];
 
-  auction: any;
-  type: any;
+  constructor(private auctionService: AuctionService, private notifier: NotifierService, private router: Router) {
 
-  acTimeInterval: any;
 
-  ownerName : string;
-
-  @ViewChild(PerfectScrollbarComponent, {static: true})
-  scrollbar?: PerfectScrollbarComponent;
-
-  constructor(private activatedRoute: ActivatedRoute, private location: Location,private auctionService:AuctionService,private notifier : NotifierService) {
   }
 
   ngOnInit() {
-
-    this.activatedRoute.paramMap
-      .pipe(map(() => window.history.state)).subscribe(
-      data => {
-        this.auction = data['action'];
-        this.type = data['type'];
-      }
-    );
-
-    this.getAuctionOwner();
-
-    this.acTimeInterval = setInterval(() => {
-      this.remTime = this.getRemTime(this.auction['enddate']);
-    }, 1000);
-
+    //getting auctions
+    this.getMyAuctions();
   }
 
-  setImage(image) {
 
+  getMyAuctions() {
+
+    this.auctionService.getMyAuctions().subscribe(
+      res => {
+
+        if (res['success']) {
+
+          this.myActions = res['body'];
+
+        } else {
+          this.notifier.notify('error', res['message']);
+        }
+
+      }, error => {
+        this.notifier.notify('error', 'Something went wrong, please try again!');
+      }
+    );
+  }
+
+  getAuctionImage(image) {
     let styles;
-    if (image != null) {
+    if (image.length > 0) {
 
       styles = {
-        'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url(' + constants.main_url + constants.images_path + image + ')',
+        'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url(' + constants.main_url + constants.images_path + image[0] + ')',
         'background-size': 'cover',
         'background-repeat': 'no-repeat',
         'background-position': 'center center',
@@ -81,28 +74,17 @@ export class AuctionComponent implements OnInit, OnDestroy {
     }
   }
 
-  goBack() {
-    this.location.back();
-  }
+  navigateToAuction(auction) {
 
-  getAuctionOwner(){
+    let type = 'upcoming';
 
-    if (this.auction != null){
-      this.auctionService.getAuctionOwner(this.auction['_id']).subscribe(
-        (res)=>{
-          if (res['success']){
-            this.ownerName = res.body.firstname + ' ' + res.body.lastname;
-          }else{
-            this.notifier.notify('error', res['message']);
-          }
-        },error => {
-          this.notifier.notify('error', 'Something went wrong, please try again!');
-        }
-      )
+    if (this.checkDateIsPassed(auction['enddate'])) {
+      type = 'end';
     }
 
-
+    this.router.navigate(['/auction'], {state: {action: auction, type: type}});
   }
+
 
   getRemTime(ending) {
     var now = moment();
@@ -133,10 +115,18 @@ export class AuctionComponent implements OnInit, OnDestroy {
     } else {
       return this.seconds + 'S Left';
     }
+
+
+    // console.log("Days: ", days);
+    // console.log("Hours: ", hours);
+    // console.log("Minutes: ", minutes);
+    // console.log("Seconds: ", seconds);
   }
 
-  ngOnDestroy(): void {
-    clearInterval(this.acTimeInterval);
+  checkDateIsPassed(dateTime) {
+    if (dateTime != null) {
+      return moment(dateTime).isBefore();
+    }
   }
 
 }

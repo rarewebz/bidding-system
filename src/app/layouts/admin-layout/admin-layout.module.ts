@@ -14,6 +14,7 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {AuctionCreateComponent} from '../../pages/create-auction/auction-create.component';
+import {MyAuctionComponent} from '../../pages/my-auction/my-auction.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -24,7 +25,8 @@ import {AuctionCreateComponent} from '../../pages/create-auction/auction-create.
     HttpClientModule,
     NgbModule,
     ClipboardModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    ReactiveFormsModule
   ],
   declarations: [
     DashboardComponent,
@@ -32,7 +34,8 @@ import {AuctionCreateComponent} from '../../pages/create-auction/auction-create.
     TablesComponent,
     IconsComponent,
     AuctionComponent,
-    AuctionCreateComponent
+    AuctionCreateComponent,
+    MyAuctionComponent
   ]
 })
 

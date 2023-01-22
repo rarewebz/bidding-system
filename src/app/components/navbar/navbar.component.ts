@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(location: Location,  private element: ElementRef, private router: Router) {
 
-    this.userName = localStorage.getItem(constants.user_name);
+    this.userName = localStorage.getItem(constants.user_first_name) + " " +localStorage.getItem(constants.user_last_name);
 
   }
 

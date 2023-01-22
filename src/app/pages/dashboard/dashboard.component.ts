@@ -105,7 +105,7 @@ export class DashboardComponent implements OnInit {
     this.seconds = duration.seconds();
 
     if (this.days != '0' && this.hours != '0' && this.minutes != '0' && this.seconds != '0') {
-      return this.days + 'D ' + this.hours + 'H ' + this.minutes + +'M  ' + this.seconds + 'S Left';
+      return this.days + 'D ' + this.hours + 'H ' + this.minutes + 'M  ' + this.seconds + 'S Left';
     } else if (this.days == '0' && this.hours != '0' && this.minutes != '0' && this.seconds != '0') {
       return this.hours + 'H ' + this.minutes + 'M ' + this.seconds + 'S Left';
     } else if (this.days == '0' && this.hours == '0' && this.minutes != '0' && this.seconds != '0') {

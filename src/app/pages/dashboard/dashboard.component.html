@@ -10,8 +10,8 @@
     <div class="row mb-1rem">
 
 
-      <div class="col-xl-3 col-lg-6" *ngFor="let upcomingAuction of upcoming">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img" [ngStyle]="getAuctionImage(upcomingAuction.images)">
+      <div class="col-xl-3 col-lg-6" style="padding-bottom: 1rem;" *ngFor="let upcomingAuction of upcoming">
+        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img" [ngStyle]="getAuctionImage(upcomingAuction.images)" (click)="navigateToAuction(upcomingAuction,'upcoming')">
 
           <div class="free-div">
             <div>{{getRemTime(upcomingAuction['enddate'])}}</div>
@@ -27,7 +27,7 @@
           <span
             class=" session-per-text price-txt">Price {{upcomingAuction['initialprice']['numberDecimal'] | currency : 'LKR ' : 'code'}} </span>
           <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
+<!--          <span class=" session-per-text">By Chanuka Sandaruwan</span>-->
 
         </div>
       </div>
@@ -39,8 +39,8 @@
     <!-- Card stats -->
     <div class="row mb-1rem">
 
-      <div class="col-xl-3 col-lg-6" *ngFor="let ongoingAuction of ongoing">
-        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img" [ngStyle]="getAuctionImage(ongoingAuction.images)">
+      <div class="col-xl-3 col-lg-6" style="padding-bottom: 1rem;" *ngFor="let ongoingAuction of ongoing">
+        <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img" [ngStyle]="getAuctionImage(ongoingAuction.images)" (click)="navigateToAuction(ongoingAuction,'ongoing')">
 
           <div class="free-div">
             <div>{{getRemTime(ongoingAuction['enddate'])}}</div>
@@ -56,7 +56,7 @@
           <span
             class=" session-per-text price-txt">Price {{ongoingAuction['initialprice']['numberDecimal'] | currency : 'LKR ' : 'code'}} </span>
           <br>
-          <span class=" session-per-text">By Chanuka Sandaruwan</span>
+<!--          <span class=" session-per-text">By Chanuka Sandaruwan</span>-->
 
         </div>
       </div>
@@ -68,7 +68,7 @@
     <!-- Card stats -->
     <div class="row">
 
-      <div class="col-xl-3 col-lg-6" *ngFor="let endAuction of end">
+      <div class="col-xl-3 col-lg-6"  style="padding-bottom: 1rem;" *ngFor="let endAuction of end">
         <div class="card card-stats mb-4 mb-xl-0 bid-card bid-img" [ngStyle]="getAuctionImage(endAuction.images)" (click)="navigateToAuction(endAuction,'end')">
 
           <div class="free-div red-color-bac">

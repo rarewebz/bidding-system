@@ -7,7 +7,7 @@
 
     <button class="btn btn-icon btn-3 btn-default back-button" (click)="goBack()" type="button">
       <span class="btn-inner--icon"><i class="ni ni-bold-left"></i></span>
-      <span class="btn-inner--text">Back to search result</span>
+      <span class="btn-inner--text">Back to home</span>
     </button>
 
   </div>
@@ -16,51 +16,98 @@
 
 <!-- Page content -->
 
-<form style="padding: 3rem">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <input type="email" class="form-control form-control-alternative" id="exampleFormControlInput1" placeholder="name@example.com">
+<div class="auc-cr-div">
+
+  <div class="own-auction-title font-bold">Create Your Own Auction</div>
+
+  <form [formGroup]="auctionFrom">
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <input type="text" formControlName="name" placeholder="Enter auction name"
+                 class="form-control form-control-alternative">
+        </div>
+
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <input type="text" placeholder="Regular" class="form-control form-control-alternative" disabled="">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <div class="input-group input-group-alternative mb-4">
-          <div class="input-group-prepend">
-            <span class="input-group-text"><i class="ni ni-zoom-split-in"></i></span>
-          </div>
-          <input class="form-control form-control-alternative" placeholder="Search" type="text">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input type="number" formControlName="initialPrice" placeholder="Enter initial price"
+                 class="form-control form-control-alternative">
         </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <div class="input-group input-group-alternative mb-4">
-          <input class="form-control" placeholder="Birthday" type="text">
-          <div class="input-group-append">
-            <span class="input-group-text"><i class="ni ni-zoom-split-in"></i></span>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+            </div>
+            <input class="form-control datepicker" formControlName="startDate" placeholder="Select start date time"
+                   name="dp" ngbDatepicker #ngbStartDate="ngbDatepicker" (click)="ngbStartDate.toggle()" type="text"/>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group has-success">
-        <input type="text" placeholder="Success" class="form-control form-control-alternative is-valid">
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <ngb-timepicker formControlName="startTime"></ngb-timepicker>
+        </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group has-danger">
-        <input type="email" placeholder="Error Input" class="form-control form-control-alternative is-invalid">
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+            </div>
+            <input class="form-control datepicker" formControlName="endDate" placeholder="Select end date time"
+                   name="dp" ngbDatepicker #ngbEndDate="ngbDatepicker" (click)="ngbEndDate.toggle()" type="text"/>
+          </div>
+        </div>
       </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <ngb-timepicker formControlName="endTime"></ngb-timepicker>
+        </div>
+      </div>
+
     </div>
-  </div>
-</form>
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="form-group">
+          <textarea rows="4" formControlName="description" class="form-control form-control-alternative"
+                    placeholder="A few words about you auction"></textarea>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <input style="height: fit-content!important;"
+               formControlName="file"
+               id="file"
+               type="file"
+               class="form-control"
+               multiple=""
+               (change)="onFileChange($event)">
+
+        <img *ngFor='let url of images' [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+      </div>
+
+    </div>
+
+    <button style="margin-top: 1rem;"  class="btn btn-icon btn-lg btn-primary" type="button" (click)="saveAuction()">
+      <span class="btn-inner--icon"><i class="ni ni-cloud-upload-96"></i></span>
+      <span class="btn-inner--text">Save Auction</span>
+    </button>
+
+  </form>
+
+</div>

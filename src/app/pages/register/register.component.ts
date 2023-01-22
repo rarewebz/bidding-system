@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
       let req = {
         firstname: this.registrationForm.controls.firstName.value,
         lastname: this.registrationForm.controls.lastName.value,
-        mobile: this.mobile,
+        contact: this.mobile,
         email: this.registrationForm.controls.email.value,
         password: this.registrationForm.controls.password.value,
       };

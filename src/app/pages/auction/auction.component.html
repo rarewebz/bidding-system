@@ -57,7 +57,7 @@
       </div>
 
       <div class="col-12">
-        <p class="gym-desc">Chanuka Sandaruwan</p>
+        <p class="gym-desc">{{ownerName}}</p>
       </div>
 
       <div>
@@ -66,7 +66,7 @@
           Time Left
         </div>
 
-        <div *ngIf="type != 'end'" class="auc-time-left">{{remTime}}  |  {{'2023-01-18T15:39:09Z' | date : 'EEEE, MMMM d, y'}}</div>
+        <div *ngIf="type != 'end'" class="auc-time-left">{{remTime}}  |  {{auction['enddate'] | date : 'EEEE, MMMM d, y'}}</div>
 
         <div class="expired-div font-bold" *ngIf="type == 'end'">
           Expired

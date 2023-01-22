@@ -321,3 +321,41 @@ body {
   border: solid 2px white;
 }
 
+.own-auction-title{
+  padding-bottom: 1rem;
+  font-size: 30px;
+  color: #32325d;
+}
+
+.auc-cr-div{
+  margin-left: 3rem;
+  padding: 2rem;
+  border-radius: 0.45rem;
+  box-shadow: 0 0.46875rem 2.1875rem rgb(59 62 102 / 3%), 0 0.9375rem 1.40625rem rgb(59 62 102 / 3%), 0 0.25rem 0.53125rem rgb(59 62 102 / 5%), 0 0.125rem 0.1875rem rgb(59 62 102 / 3%);
+  margin-right: 3rem;
+  margin-top: 1rem;
+}
+
+[type="file"] {
+  /* Style the color of the message that says 'No file chosen' */
+  color: #878787;
+}
+[type="file"]::-webkit-file-upload-button {
+  background: #ED1C1B;
+  border: 2px solid #ED1C1B;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  outline: none;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  transition: all 1s ease;
+  margin-right: 17px;
+}
+
+[type="file"]::-webkit-file-upload-button:hover {
+  background: #fff;
+  border: 2px solid #535353;
+  color: #000;
+}

@@ -22,6 +22,7 @@ import {AuthGuard} from './guards/auth.guard';
 import {AuctionService} from './services/auction.service';
 import {TokenInterceptor} from './interceptors/token.interceptor';
 
+
 const customNotifierOptions: NotifierOptions = {
   position: {
     horizontal: {
@@ -78,6 +79,7 @@ const customNotifierOptions: NotifierOptions = {
     NotifierModule,
     NgProgressHttpModule,
     NgProgressModule.withConfig({color: '#000000'}),
+
   ],
   declarations: [
     AppComponent,
