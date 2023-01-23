@@ -91,6 +91,8 @@ export class AuctionComponent implements OnInit, OnDestroy {
           if (!this.checkDateIsPassed(this.auction['enddate'])) {
             let socketId = this.socket.ioSocket.id;
             this.socket.emit('bid', {channelId: this.auction['_id'], socketId: socketId, amount: amount});
+
+            this.bidAmount = "";
           } else {
             this.notifier.notify('error', 'Sorry, this auction is expired!');
           }
