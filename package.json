@@ -37,6 +37,7 @@
     "ngx-clipboard": "15.0.1",
     "ngx-perfect-scrollbar": "^10.1.1",
     "ngx-progressbar": "^9.0.0",
+    "ngx-socket-io": "^4.4.0",
     "ngx-toastr": "14.2.2",
     "nouislider": "15.5.1",
     "rxjs": "~7.5.0",

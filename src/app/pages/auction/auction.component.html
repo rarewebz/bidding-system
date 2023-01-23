@@ -26,12 +26,12 @@
       </div>
 
       <div class="col-12" style="padding-left: 0!important;">
-        <div class="flex-row galary-div" >
-          <div class="col-6 galary-card" >
+        <div class="flex-row galary-div">
+          <div class="col-6 galary-card">
             <div class="galary-img" [ngStyle]="setImage(auction['images'][1])"></div>
           </div>
 
-          <div class="col-6 galary-card" >
+          <div class="col-6 galary-card">
             <div class="galary-img" [ngStyle]="setImage(auction['images'][2])"></div>
           </div>
 
@@ -66,7 +66,8 @@
           Time Left
         </div>
 
-        <div *ngIf="type != 'end'" class="auc-time-left">{{remTime}}  |  {{auction['enddate'] | date : 'EEEE, MMMM d, y'}}</div>
+        <div *ngIf="type != 'end'" class="auc-time-left">{{remTime}}
+          |  {{auction['enddate'] | date : 'EEEE, MMMM d, y'}}</div>
 
         <div class="expired-div font-bold" *ngIf="type == 'end'">
           Expired
@@ -77,9 +78,11 @@
         Current bid
       </div>
 
-      <div class="bid-price">{{auction['initialprice']['$numberDecimal'] | currency : 'LKR ' : 'code'}}</div>
 
-
+      <div class="bid-price"
+           *ngIf="bids.length == 0">{{auction['initialprice']['$numberDecimal'] | currency : 'LKR ' : 'code'}}</div>
+      <div class="bid-price"
+           *ngIf="bids.length > 0">{{bids[bids.length - 1]['bid']['$numberDecimal'] | currency : 'LKR ' : 'code'}}</div>
 
     </div>
   </div>
@@ -92,56 +95,37 @@
 
         <perfect-scrollbar [autoPropagation]="true" class="background-white">
 
-          <div class="chat-wrapper p-3 background-white" >
+          <div class="chat-wrapper p-3 background-white">
 
-            <div class="chat-item">
+            <div class="chat-item" *ngFor="let bid of bids">
 
-                <div>
-                  <div class="chat-box bg-first text-white fitzky-bubble" >
-                    <p class="chat-text">{{'Kavindu Akash just bid LKR 10000.00'}}</p>
-                  </div>
-
-
-<!--                  <small class="mt-2 d-block text-black-50">-->
-<!--                    <fa-icon [icon]="['far', 'clock']" class="mr-1 opacity-5"></fa-icon>-->
-<!--                    {{message.state.timestamp | date:'hh.mm a'}} | {{dateToFromNowDaily(message.state.timestamp)}}-->
-<!--                  </small>-->
+              <div>
+                <div class="chat-box bg-first text-white fitzky-bubble">
+                  <p
+                    class="chat-text">{{bid['username'] + ' just bid '}} {{bid['bid']['$numberDecimal'] | currency : 'LKR ' : 'code'}}</p>
                 </div>
+
               </div>
-
-            <div class="chat-item">
-
-            <div>
-              <div class="chat-box bg-first text-white fitzky-bubble" >
-                <p class="chat-text">{{'Chanuka Sandaruwan just bid LKR 20000.00'}}</p>
-              </div>
-
-
-              <!--                  <small class="mt-2 d-block text-black-50">-->
-              <!--                    <fa-icon [icon]="['far', 'clock']" class="mr-1 opacity-5"></fa-icon>-->
-              <!--                    {{message.state.timestamp | date:'hh.mm a'}} | {{dateToFromNowDaily(message.state.timestamp)}}-->
-              <!--                  </small>-->
-            </div>
-
             </div>
 
           </div>
 
 
         </perfect-scrollbar>
-        <div class=" chat-button-outer-div app-content--inner__footer bg-white p-4 border-top padding-left-right-05 bottom-chat-background">
+        <div
+          class=" chat-button-outer-div app-content--inner__footer bg-white p-4 border-top padding-left-right-05 bottom-chat-background">
           <div class="display-flex margin-left-mobile">
 
-            <input  class="form-control margin-right chat-input"
+            <input type="number" class="form-control margin-right chat-input" [(ngModel)]="bidAmount"
                    placeholder="Enter your bid amount and hit enter">
 
-            <button style="margin-left: 20px!important; width: 8vw!important;" class="btn btn-icon btn-3 btn-success" type="button">
+            <button style="margin-left: 20px!important; width: 8vw!important;" class="btn btn-icon btn-3 btn-success"
+                    type="button" (click)="makeABid(bidAmount)">
               <span class="btn-inner--icon"><i class="ni ni-send"></i></span>
 
               <span class="btn-inner--text">Place bid</span>
 
             </button>
-
 
 
           </div>

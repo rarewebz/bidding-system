@@ -29,4 +29,8 @@ export class AuctionService {
     return this.http.get(constants.main_url + constants.auction_path + "/" + userId + "/owner");
   }
 
+  getAllBidsByAction(auctionId): Observable<any>{
+    return this.http.get(constants.main_url + constants.auction_path + "/" + auctionId +"/bids");
+  }
+
 }

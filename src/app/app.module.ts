@@ -21,6 +21,8 @@ import {NgProgressModule} from 'ngx-progressbar';
 import {AuthGuard} from './guards/auth.guard';
 import {AuctionService} from './services/auction.service';
 import {TokenInterceptor} from './interceptors/token.interceptor';
+import {constants} from './constants/constant';
+import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 
 
 const customNotifierOptions: NotifierOptions = {
@@ -64,6 +66,8 @@ const customNotifierOptions: NotifierOptions = {
   }
 };
 
+const config: SocketIoConfig = { url: constants.main_url, options: {} };
+
 
 @NgModule({
   imports: [
@@ -79,7 +83,7 @@ const customNotifierOptions: NotifierOptions = {
     NotifierModule,
     NgProgressHttpModule,
     NgProgressModule.withConfig({color: '#000000'}),
-
+    SocketIoModule.forRoot(config)
   ],
   declarations: [
     AppComponent,

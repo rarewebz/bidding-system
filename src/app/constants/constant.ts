@@ -14,6 +14,7 @@ const REFRESH_TOKEN = 'refresh_token';
 const USER_FIRST_NAME = 'userFirstName';
 const USER_LAST_NAME = 'userLastName';
 const USER_CONTACT = 'userContact';
+const USER_ID = 'userId';
 const EMAIL = 'email';
 
 export const constants = {
@@ -32,4 +33,5 @@ export const constants = {
   user_last_name: USER_LAST_NAME,
   user_contact: USER_CONTACT,
   email: EMAIL,
+  user_id: USER_ID,
 };

@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             localStorage.setItem(constants.user_first_name, res['user']['firstname']);
             localStorage.setItem(constants.user_last_name, res['user']['lastname']);
             localStorage.setItem(constants.email, res['user']['email']);
+            localStorage.setItem(constants.user_id, res['user']['id']);
 
             this.router.navigate(['/dashboard']);
 
