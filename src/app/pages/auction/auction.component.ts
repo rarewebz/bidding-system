@@ -61,6 +61,10 @@ export class AuctionComponent implements OnInit, OnDestroy {
     this.getAuctionOwner();
     this.getAllBids();
 
+    if (this.checkDateIsPassed(this.auction['enddate'])){
+      this.type = 'end';
+    }
+
     this.acTimeInterval = setInterval(() => {
       this.remTime = this.getRemTime(this.auction['enddate']);
     }, 1000);
@@ -181,6 +185,8 @@ export class AuctionComponent implements OnInit, OnDestroy {
   }
 
   getRemTime(ending) {
+
+    ending = ending.replaceAll('Z', '');
     var now = moment();
     var end = moment(ending); // another date
     var duration = moment.duration(end.diff(now));
@@ -216,6 +222,7 @@ export class AuctionComponent implements OnInit, OnDestroy {
   }
 
   checkDateIsPassed(dateTime) {
+    dateTime = dateTime.replaceAll('Z', '');
     if (dateTime != null) {
       return moment(dateTime).isBefore();
     }

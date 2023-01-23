@@ -87,6 +87,7 @@ export class MyAuctionComponent implements OnInit {
 
 
   getRemTime(ending) {
+    ending= ending.replaceAll("Z","");
     var now = moment();
     var end = moment(ending); // another date
     var duration = moment.duration(end.diff(now));
@@ -124,6 +125,7 @@ export class MyAuctionComponent implements OnInit {
   }
 
   checkDateIsPassed(dateTime) {
+    dateTime = dateTime.replaceAll('Z', '');
     if (dateTime != null) {
       return moment(dateTime).isBefore();
     }

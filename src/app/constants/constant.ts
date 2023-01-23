@@ -7,6 +7,9 @@ const IMAGES_URL = 'images/';
 const USER_CREATE_URL = 'user/create';
 const AUCTION_IMAGES_URL = 'auction/images';
 const MY_AUCTION_IMAGES_URL = 'my/auctions';
+const MY_CLAIMS_URL = 'my/claims/bidder';
+const MY_CLAIMS_OWNER_URL = 'my/claims/owner';
+const MARK_AS_RECEIVED_URL = 'my/auction';
 
 
 const ACCESS_TOKEN = 'access_token';
@@ -26,6 +29,9 @@ export const constants = {
   user_create_path: USER_CREATE_URL,
   auction_image_path: AUCTION_IMAGES_URL,
   my_auction_path: MY_AUCTION_IMAGES_URL,
+  my_claims: MY_CLAIMS_URL,
+  my_claims_owner: MY_CLAIMS_OWNER_URL,
+  mark_as_received_path: MARK_AS_RECEIVED_URL,
 
   access_token: ACCESS_TOKEN,
   refresh_token: REFRESH_TOKEN,

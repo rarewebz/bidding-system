@@ -90,6 +90,7 @@ export class AuctionCreateComponent implements OnInit {
               res => {
                 if (res['success']) {
                   this.notifier.notify('success', 'Your action has been successfully saved!');
+                  this.router.navigate(['/dashboard']);
                 } else {
                   this.notifier.notify('error', res['message']);
                 }

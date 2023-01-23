@@ -359,3 +359,37 @@ body {
   border: 2px solid #535353;
   color: #000;
 }
+
+.won-div{
+  padding-top: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  .red-div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: #ffcbcb;
+    color:  #c10016;;
+    border-radius: 0.65rem;
+    padding: 1rem;
+    align-items: baseline;
+  }
+}
+
+.rec-div{
+  padding-top: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  .blue-div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: #cbd5ff;
+    color: #005ac1;;
+    border-radius: 0.65rem;
+    padding: 1rem;
+    align-items: baseline;
+  }
+}

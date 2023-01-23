@@ -25,12 +25,24 @@ export class AuctionService {
     return this.http.get(constants.main_url + constants.my_auction_path);
   }
 
-  getAuctionOwner(userId) : Observable<any>{
-    return this.http.get(constants.main_url + constants.auction_path + "/" + userId + "/owner");
+  getAuctionOwner(userId): Observable<any> {
+    return this.http.get(constants.main_url + constants.auction_path + '/' + userId + '/owner');
   }
 
-  getAllBidsByAction(auctionId): Observable<any>{
-    return this.http.get(constants.main_url + constants.auction_path + "/" + auctionId +"/bids");
+  getAllBidsByAction(auctionId): Observable<any> {
+    return this.http.get(constants.main_url + constants.auction_path + '/' + auctionId + '/bids');
+  }
+
+  getBidderClaims(): Observable<any> {
+    return this.http.get(constants.main_url + constants.my_claims);
+  }
+
+  getOwnerClaims(): Observable<any> {
+    return this.http.get(constants.main_url + constants.my_claims_owner);
+  }
+
+  markAsReceivedAndGiven(auctionId, status): Observable<any> {
+    return this.http.post(constants.main_url + constants.mark_as_received_path + '/' + auctionId + '/status/' + status, '');
   }
 
 }

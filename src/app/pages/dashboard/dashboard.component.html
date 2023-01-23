@@ -2,6 +2,24 @@
 
 </div>
 
+<div class="won-div" *ngFor="let win of wonAuctions">
+  <div class="red-div">
+    <div>You have won the {{win['name']}}, your bid was {{win['initialprice']['$numberDecimal'] | currency : 'LKR ' : 'code'}}</div>
+    <button type="button" class="btn btn-default" (click)="markAsReceivedAndGiven(win['_id'],'received')">Claim</button>
+  </div>
+
+</div>
+
+
+<div class="rec-div" *ngFor="let sold of soldAuctions">
+  <div class="blue-div">
+    <div>Did you send the item to the winner of the auction? ({{sold['name']}})</div>
+    <button type="button" class="btn btn-primary" (click)="markAsReceivedAndGiven(sold['_id'],'given')" >Yes</button>
+  </div>
+
+</div>
+
+
 <div class="container-fluid " style="margin-top: 2rem!important;">
   <div class="header-body">
 
@@ -25,7 +43,7 @@
 
         <div class="pt-1 text-align-left bid-text-color bid-text">
           <span
-            class=" session-per-text price-txt">Price {{upcomingAuction['initialprice']['numberDecimal'] | currency : 'LKR ' : 'code'}} </span>
+            class=" session-per-text price-txt">Price {{upcomingAuction['initialprice']['$numberDecimal'] | currency : 'LKR ' : 'code'}} </span>
           <br>
 <!--          <span class=" session-per-text">By Chanuka Sandaruwan</span>-->
 
