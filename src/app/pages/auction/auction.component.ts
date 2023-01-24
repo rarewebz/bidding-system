@@ -143,7 +143,7 @@ export class AuctionComponent implements OnInit, OnDestroy {
     if (image != null) {
 
       styles = {
-        'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url(' + constants.main_url + constants.images_path + image + ')',
+        'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url(' + image + ')',
         'background-size': 'cover',
         'background-repeat': 'no-repeat',
         'background-position': 'center center',

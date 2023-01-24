@@ -108,7 +108,7 @@ export class DashboardComponent implements OnInit {
     if (image.length > 0) {
 
       styles = {
-        'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url(' + constants.main_url + constants.images_path + image[0] + ')',
+        'background': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url(' + image[0] + ')',
         'background-size': 'cover',
         'background-repeat': 'no-repeat',
         'background-position': 'center center',
